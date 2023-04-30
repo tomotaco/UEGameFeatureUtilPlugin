@@ -18,6 +18,11 @@ Latent nodes:
 
 Blueprint Function Library nodes:
 
+- GetPluginURL_FileProtocol
+- GetPluginURL_InstallBundleProtocolByStringArray
+- GetPluginURL_InstallBundleProtocolByString
+- GetPluginURL_InstallBundleProtocolByNameArray
+- GetPluginURL_InstallBundleProtocolByName
 - GetGameFeatureDataForActivePluginByURL
 - GetGameFeatureDataForRegisteredPluginByURL
 - IsGameFeaturePluginInstalled
@@ -31,3 +36,4 @@ Blueprint Function Library nodes:
 - GetLoadedGameFeaturePluginFilenamesForCooking
 
 ![Blueprint nodes](images/blueprint-nodes.png)
+![Blueprint nodes](images/blueprint-nodes2.png)
