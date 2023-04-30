@@ -16,8 +16,36 @@ class UGameFeatureUtilFunctionLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 
+	/** Construct a 'file:' Plugin URL using from the PluginDescriptorPath */
+	UFUNCTION(BlueprintCallable, Category = "GameFeatureUtil")
+		static FString GetPluginURL_FileProtocol(const FString& PluginDescriptorPath);
+
+	/** Construct a 'installbundle:' Plugin URL using from the PluginName and required install bundles */
+	UFUNCTION(BlueprintCallable, Category = "GameFeatureUtil")
+		static FString GetPluginURL_InstallBundleProtocolByStringArray(const FString& PluginName, const TArray<FString>& BundleNames);
+
+	UFUNCTION(BlueprintCallable, Category = "GameFeatureUtil")
+		static FString GetPluginURL_InstallBundleProtocolByString(const FString& PluginName, const FString& BundleName);
+
+	UFUNCTION(BlueprintCallable, Category = "GameFeatureUtil")
+		static FString GetPluginURL_InstallBundleProtocolByNameArray(const FString& PluginName, const TArray<FName>& BundleNames);
+
+	UFUNCTION(BlueprintCallable, Category = "GameFeatureUtil")
+		static FString GetPluginURL_InstallBundleProtocolByName(const FString& PluginName, const FName& BundleName);
+
 #if 0
-		/** Returns all the active plugins GameFeatureDatas */
+	UFUNCTION(BlueprintCallable, Category = "GameFeatureUtil")
+		static FString GetPluginURL_InstallBundleProtocol(const FString& PluginName, const FInstallBundlePluginProtocolMetaData& ProtocolMetadata);
+
+	/** Returns the plugin protocol for the specified URL */
+	UFUNCTION(BlueprintCallable, Category = "GameFeatureUtil")
+		static EGameFeaturePluginProtocol GetPluginURLProtocol(const FString& PluginURL);
+
+	/** Tests whether the plugin URL is the specified protocol */
+	UFUNCTION(BlueprintCallable, Category = "GameFeatureUtil")
+		static bool IsPluginURLProtocol(const FString& PluginURL, EGameFeaturePluginProtocol PluginProtocol);
+
+	/** Returns all the active plugins GameFeatureDatas */
 		UFUNCTION(BlueprintCallable, Category = "GameFeatureUtil")
 		static void GetGameFeatureDataForActivePlugins(TArray<const UGameFeatureData*>& OutActivePluginFeatureDatas);
 #endif

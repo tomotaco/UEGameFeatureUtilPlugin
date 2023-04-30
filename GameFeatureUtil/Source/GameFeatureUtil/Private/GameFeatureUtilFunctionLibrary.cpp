@@ -3,7 +3,48 @@
 
 #include "GameFeatureUtilFunctionLibrary.h"
 
+
+FString UGameFeatureUtilFunctionLibrary::GetPluginURL_FileProtocol(const FString& PluginDescriptorPath)
+{
+	return UGameFeaturesSubsystem::GetPluginURL_FileProtocol(PluginDescriptorPath);
+}
+
+FString UGameFeatureUtilFunctionLibrary::GetPluginURL_InstallBundleProtocolByStringArray(const FString& PluginName, const TArray<FString>& BundleNames)
+{
+	return UGameFeaturesSubsystem::GetPluginURL_InstallBundleProtocol(PluginName, BundleNames);
+}
+
+FString UGameFeatureUtilFunctionLibrary::GetPluginURL_InstallBundleProtocolByString(const FString& PluginName, const FString& BundleName)
+{
+	return UGameFeaturesSubsystem::GetPluginURL_InstallBundleProtocol(PluginName, BundleName);
+}
+
+FString UGameFeatureUtilFunctionLibrary::GetPluginURL_InstallBundleProtocolByNameArray(const FString& PluginName, const TArray<FName>& BundleNames)
+{
+	return UGameFeaturesSubsystem::GetPluginURL_InstallBundleProtocol(PluginName, BundleNames);
+}
+
+FString UGameFeatureUtilFunctionLibrary::GetPluginURL_InstallBundleProtocolByName(const FString& PluginName, const FName& BundleName)
+{
+	return UGameFeaturesSubsystem::GetPluginURL_InstallBundleProtocol(PluginName, BundleName);
+}
+
 #if 0
+FString UGameFeatureUtilFunctionLibrary::GetPluginURL_InstallBundleProtocol(const FString& PluginName, const FInstallBundlePluginProtocolMetaData& ProtocolMetadata)
+{
+	return UGameFeaturesSubsystem::GetPluginURL_InstallBundleProtocol(PluginName, ProtocolMetadata);
+}
+
+EGameFeaturePluginProtocol UGameFeatureUtilFunctionLibrary::GetPluginURLProtocol(const FString& PluginURL)
+{
+	return UGameFeaturesSubsystem::GetPluginURLProtocol(PluginURL);
+}
+
+bool UGameFeatureUtilFunctionLibrary::IsPluginURLProtocol(const FString& PluginURL, EGameFeaturePluginProtocol PluginProtocol)
+{
+	return UGameFeaturesSubsystem::IsPluginURLProtocol(PluginURL, PluginProtocol);
+}
+
 void UGameFeatureUtilFunctionLibrary::GetGameFeatureDataForActivePlugins(TArray<const UGameFeatureData*>& OutActivePluginFeatureDatas)
 {
 	auto& Subsystem = UGameFeaturesSubsystem::Get();
